@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Gen Lab - Participant Space</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="#fyp" aria-label="Go to For You page">
+            <span class="brand-mark">R</span>
+            <span class="brand-text">
+                <span class="brand-top">Raiffeisenbank</span>
+                <span class="brand-bottom">Next Gen Lab</span>
+            </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Section navigation">
+            <a href="#fyp" class="nav-pill is-active" data-section-link="fyp" data-i18n="nav_fyp">For You</a>
+            <a href="#motivation" class="nav-pill" data-section-link="motivation" data-i18n="nav_motivation">Our Motivation</a>
+            <a href="#about" class="nav-pill" data-section-link="about" data-i18n="nav_about">About Us</a>
+            <a href="#faq" class="nav-pill" data-section-link="faq" data-i18n="nav_faq">FAQ</a>
+        </nav>
+
+        <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language">
+            EN / CZ
+        </button>
+    </header>
+
+    <main class="page-shell">
+        <section id="fyp" class="screen hero-panel">
+            <div class="hero-copy">
+                <p class="eyebrow" data-i18n="hero_eyebrow">Participant project</p>
+                <h1 data-i18n="hero_title">We made our own Gen Z campaign space</h1>
+                <p class="hero-lead" data-i18n="hero_lead">A dark, high-contrast showcase for our skills, videos, and team story. Use the For You feed to present clips and scroll through our project.</p>
+                <p class="hero-support" data-i18n="hero_support">We built this page to feel like a real campaign product, not a banking brochure.</p>
+                <div class="hero-actions">
+                    <a class="cta primary" href="#fyp" data-i18n="hero_cta_primary">Watch the feed</a>
+                    <a class="cta secondary" href="#faq" data-i18n="hero_cta_secondary">See FAQ</a>
+                </div>
+                <ul class="hero-facts">
+                    <li data-i18n="hero_fact_1">Built for short-form video storytelling</li>
+                    <li data-i18n="hero_fact_2">Designed for mobile-first scrolling</li>
+                    <li data-i18n="hero_fact_3">English by default, Czech on demand</li>
+                </ul>
+            </div>
+
+            <div class="phone-frame" aria-label="For You video feed">
+                <div class="feed-topline">
+                    <span class="feed-badge" data-i18n="fyp_label">For You</span>
+                    <button class="mini-control" type="button" data-scroll-up aria-label="Scroll up">▲</button>
+                    <button class="mini-control" type="button" data-scroll-down aria-label="Scroll down">▼</button>
+                </div>
+
+                <div class="feed-viewport" data-feed>
+                    <article class="reel-card is-active" data-reel>
+                        <div class="reel-media reel-one">
+                            <span class="reel-chip">01</span>
+                            <div class="reel-placeholder">Video loop placeholder</div>
+                        </div>
+                        <div class="reel-content">
+                            <div>
+                                <p class="reel-meta">@raifka</p>
+                                <h2 data-i18n="reel_1_title">A strong hook, a clean frame, and a clear message</h2>
+                                <p data-i18n="reel_1_text">This slot is ready for your first campaign clip, teaser, or intro video.</p>
+                            </div>
+                            <div class="reel-stats">
+                                <span>12.4K</span>
+                                <span>842</span>
+                                <span>91</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="reel-card" data-reel>
+                        <div class="reel-media reel-two">
+                            <span class="reel-chip">02</span>
+                            <div class="reel-placeholder">Video loop placeholder</div>
+                        </div>
+                        <div class="reel-content">
+                            <div>
+                                <p class="reel-meta">@raifka</p>
+                                <h2 data-i18n="reel_2_title">Fast edits, sharp typography, and a social-native vibe</h2>
+                                <p data-i18n="reel_2_text">Use this reel for a behind-the-scenes shot or a quick product reveal.</p>
+                            </div>
+                            <div class="reel-actions-inline">
+                                <button type="button" class="action-pill">♥ <span data-i18n="like">Like</span></button>
+                                <button type="button" class="action-pill">↗ <span data-i18n="share">Share</span></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="reel-card" data-reel>
+                        <div class="reel-media reel-three">
+                            <span class="reel-chip">03</span>
+                            <div class="reel-placeholder">Video loop placeholder</div>
+                        </div>
+                        <div class="reel-content">
+                            <div>
+                                <p class="reel-meta">@raifka</p>
+                                <h2 data-i18n="reel_3_title">Clean motion, bold contrast, and a memorable punchline</h2>
+                                <p data-i18n="reel_3_text">Perfect for a smart punchy message that feels more like TikTok than banking.</p>
+                            </div>
+                            <div class="reel-stats">
+                                <span>24.8K</span>
+                                <span>1.1K</span>
+                                <span>139</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="reel-card" data-reel>
+                        <div class="reel-media reel-four">
+                            <span class="reel-chip">04</span>
+                            <div class="reel-placeholder">Video loop placeholder</div>
+                        </div>
+                        <div class="reel-content">
+                            <div>
+                                <p class="reel-meta">@raifka</p>
+                                <h2 data-i18n="reel_4_title">A polished clip space for our team’s strongest skills</h2>
+                                <p data-i18n="reel_4_text">Swap in your finished video later and keep the same layout intact.</p>
+                            </div>
+                            <div class="reel-actions-inline">
+                                <button type="button" class="action-pill">♥ <span data-i18n="like">Like</span></button>
+                                <button type="button" class="action-pill">💬 <span data-i18n="comment">Comment</span></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="reel-card" data-reel>
+                        <div class="reel-media reel-five">
+                            <span class="reel-chip">05</span>
+                            <div class="reel-placeholder">Video loop placeholder</div>
+                        </div>
+                        <div class="reel-content">
+                            <div>
+                                <p class="reel-meta">@raifka</p>
+                                <h2 data-i18n="reel_5_title">Designed to loop, scroll, and keep people watching</h2>
+                                <p data-i18n="reel_5_text">The feed is made for short attention spans and strong visual rhythm.</p>
+                            </div>
+                            <div class="reel-stats">
+                                <span>19.3K</span>
+                                <span>895</span>
+                                <span>107</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="reel-card" data-reel>
+                        <div class="reel-media reel-six">
+                            <span class="reel-chip">06</span>
+                            <div class="reel-placeholder">Video loop placeholder</div>
+                        </div>
+                        <div class="reel-content">
+                            <div>
+                                <p class="reel-meta">@raifka</p>
+                                <h2 data-i18n="reel_6_title">Your strongest clip goes here at the end of the loop</h2>
+                                <p data-i18n="reel_6_text">When it finishes, the feed wraps around so the experience never feels stuck.</p>
+                            </div>
+                            <div class="reel-actions-inline">
+                                <button type="button" class="action-pill">♥ <span data-i18n="like">Like</span></button>
+                                <button type="button" class="action-pill">↗ <span data-i18n="share">Share</span></button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="motivation" class="screen content-section section-split section-alt">
+            <div class="section-heading">
+                <p class="eyebrow" data-i18n="motivation_eyebrow">Our motivation</p>
+                <h2 data-i18n="motivation_title">Why we built it this way</h2>
+            </div>
+            <div class="info-card narrative-card">
+                <p data-i18n="motivation_text_1">We wanted to show Raiffeisenbank in a format that feels native to our generation: fast, visual, direct, and easy to scroll through.</p>
+                <p data-i18n="motivation_text_2">Instead of a corporate banking look, we focused on a dark, energetic style with neon yellow accents, strong typography, and a feed that can hold our videos, skills, and story.</p>
+                <p data-i18n="motivation_text_3">The goal is simple: make the project feel ambitious, modern, and believable as a participant pitch.</p>
+                <p data-i18n="motivation_text_4">Every screen is intentionally short and dense so judges can understand the idea fast and still remember the brand feeling after the scroll.</p>
+            </div>
+        </section>
+
+        <section id="about" class="screen content-section section-split">
+            <div class="section-heading">
+                <p class="eyebrow" data-i18n="about_eyebrow">About us</p>
+                <h2 data-i18n="about_title">We are the participant team behind this concept</h2>
+                <p class="section-copy" data-i18n="about_copy">We combine design, development, and presentation so the project looks polished from the first screen to the last.</p>
+                <p class="section-copy" data-i18n="about_copy_2">Each person brings a different strength, which helps us build something that feels complete instead of one-dimensional.</p>
+            </div>
+            <div class="grid-cards team-grid">
+                <article class="info-card team-card">
+                    <div class="profile-photo photo-1">MH</div>
+                    <h3>Matěj Holý</h3>
+                    <p class="team-meta" data-i18n="team_meta_1">19 years old • University of West Bohemia</p>
+                    <p data-i18n="team_role_1">Developer and UI builder</p>
+                    <span class="team-note" data-i18n="team_note_1">Turns ideas into code and interactive layout.</span>
+                </article>
+                <article class="info-card team-card">
+                    <div class="profile-photo photo-2">MŠ</div>
+                    <h3>Matěj Šach</h3>
+                    <p class="team-meta" data-i18n="team_meta_2">20 years old • Creative Arts School</p>
+                    <p data-i18n="team_role_2">Creative lead and content direction</p>
+                    <span class="team-note" data-i18n="team_note_2">Shapes the tone, visuals, and content flow.</span>
+                </article>
+                <article class="info-card team-card">
+                    <div class="profile-photo photo-3">B</div>
+                    <h3>Bojan</h3>
+                    <p class="team-meta" data-i18n="team_meta_3">21 years old • Business and Marketing</p>
+                    <p data-i18n="team_role_3">Strategy, outreach, and presentation</p>
+                    <span class="team-note" data-i18n="team_note_3">Keeps the message clear and focused for the jury.</span>
+                </article>
+            </div>
+        </section>
+
+        <section id="faq" class="screen content-section section-split section-alt">
+            <div class="section-heading">
+                <p class="eyebrow" data-i18n="faq_eyebrow">FAQ</p>
+                <h2 data-i18n="faq_title">Quick answers about the project</h2>
+                <p class="section-copy" data-i18n="faq_copy">A clean replacement that keeps the four-screen structure useful and focused.</p>
+            </div>
+            <div class="info-card faq-card">
+                <details class="faq-item" open>
+                    <summary data-i18n="faq_q1">What is this project?</summary>
+                    <p data-i18n="faq_a1">It is our participant presentation for Next Gen Lab, built to show skills, ideas, video content, and a strong Gen Z visual direction.</p>
+                </details>
+                <details class="faq-item">
+                    <summary data-i18n="faq_q2">What should viewers notice first?</summary>
+                    <p data-i18n="faq_a2">The black and yellow visual system, the reel-style feed, and the fact that the page is designed to feel young, bold, and modern.</p>
+                </details>
+                <details class="faq-item">
+                    <summary data-i18n="faq_q3">What can you replace here later?</summary>
+                    <p data-i18n="faq_a3">You can turn this screen into process notes, video credits, a mini case study, or a behind-the-scenes section about how you made the site.</p>
+                </details>
+                <details class="faq-item">
+                    <summary data-i18n="faq_q4">How is the reel supposed to work?</summary>
+                    <p data-i18n="faq_a4">Each reel should fit inside the video area, with its own internal scroll or snap behavior, instead of dragging the whole page around.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
