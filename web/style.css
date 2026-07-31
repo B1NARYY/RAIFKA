@@ -79,15 +79,22 @@ a {
 }
 
 .brand-mark {
-    width: 2.7rem;
-    height: 2.7rem;
+    width: 4.25rem;
+    height: 4.25rem;
     display: grid;
     place-items: center;
-    border-radius: 14px;
-    background: linear-gradient(145deg, var(--accent) 0%, #cbb700 100%);
-    color: #050505;
-    font-weight: 900;
+    border-radius: 16px;
+    background: rgba(247, 229, 0, 0.08);
+    padding: 0.42rem;
+    overflow: hidden;
     box-shadow: 0 16px 30px rgba(247, 229, 0, 0.22);
+}
+
+.brand-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .brand-text {
@@ -182,6 +189,8 @@ a {
     gap: 0.9rem;
     min-height: 0;
     justify-items: center;
+    scroll-margin-top: 5.8rem;
+    scroll-snap-align: start;
 }
 
 .poster-hero-head {
@@ -1082,10 +1091,10 @@ textarea {
     }
 
     .brand-mark {
-        width: 2.35rem;
-        height: 2.35rem;
-        border-radius: 12px;
-        font-size: 0.95rem;
+        width: 3.55rem;
+        height: 3.55rem;
+        border-radius: 15px;
+        padding: 0.32rem;
     }
 
     .brand-top {

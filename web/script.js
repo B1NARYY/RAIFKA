@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const translations = {
         en: {
+            nav_poster: 'Poster',
             nav_fyp: 'For You',
             nav_about: 'About Us',
             nav_motivation: 'Our Motivation',
@@ -73,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             faq_a4: 'Each reel should fit inside the video area, with its own internal scroll or snap behavior, instead of dragging the whole page around.'
         },
         cs: {
+            nav_poster: 'Plakát',
             nav_fyp: 'Pro vás',
             nav_about: 'O nás',
             nav_motivation: 'Naše motivace',
@@ -180,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const getVisibleSectionId = () => {
-        const sections = ['fyp', 'motivation', 'about', 'faq']
+        const sections = ['poster', 'fyp', 'motivation', 'about', 'faq']
             .map((id) => document.getElementById(id))
             .filter(Boolean);
 
@@ -317,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
         threshold: 0.45
     });
 
-    ['fyp', 'motivation', 'about', 'faq']
+    ['poster', 'fyp', 'motivation', 'about', 'faq']
         .map((id) => document.getElementById(id))
         .filter(Boolean)
         .forEach((section) => sectionObserver.observe(section));

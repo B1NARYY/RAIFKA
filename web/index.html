@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Next Gen Lab - Participant Space</title>
+    <link rel="icon" type="image/webp" href="https://rb.nextgenlab.cz/img/hero-decorative.webp">
+    <link rel="icon" sizes="32x32" type="image/webp" href="https://rb.nextgenlab.cz/img/hero-decorative.webp">
+    <link rel="icon" sizes="48x48" type="image/webp" href="https://rb.nextgenlab.cz/img/hero-decorative.webp">
+    <link rel="shortcut icon" type="image/webp" href="https://rb.nextgenlab.cz/img/hero-decorative.webp">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://rb.nextgenlab.cz/img/hero-decorative.webp">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
@@ -11,7 +16,9 @@
 <body>
     <header class="site-header">
         <a class="brand" href="#fyp" aria-label="Go to For You page">
-            <span class="brand-mark">R</span>
+            <span class="brand-mark">
+                <img class="brand-logo" src="https://rb.nextgenlab.cz/img/hero-decorative.webp" alt="" aria-hidden="true">
+            </span>
             <span class="brand-text">
                 <span class="brand-top">Raiffeisenbank</span>
                 <span class="brand-bottom">Next Gen Lab</span>
@@ -19,6 +26,7 @@
         </a>
 
         <nav class="site-nav" aria-label="Section navigation">
+            <a href="#poster" class="nav-pill" data-section-link="poster" data-i18n="nav_poster">Poster</a>
             <a href="#fyp" class="nav-pill is-active" data-section-link="fyp" data-i18n="nav_fyp">For You</a>
             <a href="#motivation" class="nav-pill" data-section-link="motivation" data-i18n="nav_motivation">Our Motivation</a>
             <a href="#about" class="nav-pill" data-section-link="about" data-i18n="nav_about">About Us</a>
@@ -31,7 +39,7 @@
     </header>
 
     <main class="page-shell">
-        <section class="poster-hero" aria-label="Campaign poster">
+        <section id="poster" class="poster-hero" aria-label="Campaign poster">
             <div class="poster-hero-head">
                 <p class="eyebrow" data-i18n="poster_label">Campaign poster</p>
                 <span class="poster-edition" data-poster-edition>EN</span>
