@@ -657,7 +657,7 @@ a {
 }
 
 .profile-photo {
-    width: 25.8rem;
+    width: min(100%, 25.8rem);
     height: 29rem;
     border-radius: 18px;
     display: grid;
@@ -667,6 +667,7 @@ a {
     font-size: 1.25rem;
     font-weight: 900;
     margin-bottom: 1rem;
+    margin-inline: auto;
     overflow: hidden;
 }
 
@@ -1066,10 +1067,11 @@ textarea {
     }
 
     .profile-photo {
-        width: 12.9rem;
+        width: min(100%, 12.9rem);
         height: 15rem;
         border-radius: 22px;
         margin-bottom: 0.85rem;
+        margin-inline: auto;
     }
 }
 
