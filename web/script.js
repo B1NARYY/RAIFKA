@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollDownButtons = document.querySelectorAll('[data-scroll-down]');
     const langToggle = document.querySelector('[data-lang-toggle]');
     const navLinks = Array.from(document.querySelectorAll('[data-section-link]'));
+    const posterImage = document.querySelector('[data-poster-image]');
+    const posterEdition = document.querySelector('[data-poster-edition]');
 
     const translations = {
         en: {
@@ -21,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
             hero_fact_1: 'Built for short-form video storytelling',
             hero_fact_2: 'Designed for mobile-first scrolling',
             hero_fact_3: 'English by default, Czech on demand',
+            poster_label: 'Campaign poster',
+            poster_alt: 'Campaign poster, English version',
             fyp_label: 'For You',
             reel_1_title: 'A strong hook, a clean frame, and a clear message',
             reel_1_text: 'This slot is ready for your first campaign clip, teaser, or intro video.',
@@ -53,9 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
             team_note_1: 'Turns ideas into code and interactive layout.',
             team_note_2: 'Shapes the tone, visuals, and content flow.',
             team_note_3: 'Keeps the message clear and focused for the jury.',
-            team_meta_1: '19 years old • University of West Bohemia',
-            team_meta_2: '20 years old • Creative Arts School',
-            team_meta_3: '21 years old • Business and Marketing',
+            team_meta_1: '20 years old • Software Engineering and Technology, FEL',
+            team_meta_2: '20 years old • Sociology, Contemporary Society Studies, FSV',
+            team_meta_3: '20 years old • Sociology, Contemporary Society Studies, FSV',
             faq_eyebrow: 'FAQ',
             faq_title: 'Quick answers about the project',
             faq_copy: 'A clean replacement that keeps the four-screen structure useful and focused.',
@@ -82,6 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
             hero_fact_1: 'Vytvořeno pro krátká videa',
             hero_fact_2: 'Navrženo pro mobile-first scrollování',
             hero_fact_3: 'Výchozí jazyk angličtina, čeština na přepnutí',
+            poster_label: 'Kampanový plakát',
+            poster_alt: 'Kampanový plakát, česká verze',
             fyp_label: 'Pro vás',
             reel_1_title: 'Silný hook, čistý rám a jasné sdělení',
             reel_1_text: 'Tento slot je připravený pro první video kampaně, teaser nebo úvodní clip.',
@@ -114,9 +120,9 @@ document.addEventListener('DOMContentLoaded', () => {
             team_note_1: 'Mění nápady v kód a interaktivní rozhraní.',
             team_note_2: 'Utváří tón, vizuály a tok obsahu.',
             team_note_3: 'Drží sdělení jasné a zaměřené na porotu.',
-            team_meta_1: '19 let • Západočeská univerzita',
-            team_meta_2: '20 let • Umělecká škola',
-            team_meta_3: '21 let • Business a marketing',
+            team_meta_1: '20 let • Softwarové inženýrství a technologie FEL',
+            team_meta_2: '20 let • Sociologie Studia Současných společnosti FSV',
+            team_meta_3: '20 let • Sociologie Studia Současných společnosti FSV',
             faq_eyebrow: 'FAQ',
             faq_title: 'Rychlé odpovědi o projektu',
             faq_copy: 'Čistá náhrada, která udržuje čtyřobrazovkovou strukturu užitečnou a soustředěnou.',
@@ -209,6 +215,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 node.setAttribute('placeholder', dictionary[key]);
             }
         });
+
+        if (posterImage) {
+            posterImage.src = lang === 'en' ? '../poster/poster_en.jpg' : '../poster/poster_cz.png';
+            posterImage.alt = dictionary.poster_alt;
+        }
+
+        if (posterEdition) {
+            posterEdition.textContent = lang === 'en' ? 'EN' : 'CZ';
+        }
 
         langToggle.setAttribute('aria-pressed', String(lang === 'cs'));
         langToggle.textContent = lang === 'en' ? 'EN / CZ' : 'CZ / EN';
@@ -325,6 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     applyLanguage(currentLang);
+    feed.scrollTop = 0;
     updateActiveReel(getClosestReelIndex());
     updateActiveNav(getVisibleSectionId());
     startLoop();
