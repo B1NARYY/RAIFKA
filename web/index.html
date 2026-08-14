@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,39 +26,34 @@
         <nav class="site-nav" aria-label="Section navigation">
             <a href="#poster" class="nav-pill" data-section-link="poster" data-i18n="nav_poster">Poster</a>
             <a href="#fyp" class="nav-pill is-active" data-section-link="fyp" data-i18n="nav_fyp">For You</a>
-            <a href="#motivation" class="nav-pill" data-section-link="motivation" data-i18n="nav_motivation">Our Motivation</a>
             <a href="#about" class="nav-pill" data-section-link="about" data-i18n="nav_about">About Us</a>
+            <a href="#motivation" class="nav-pill" data-section-link="motivation" data-i18n="nav_motivation">Our Motivation</a>
             <a href="#faq" class="nav-pill" data-section-link="faq" data-i18n="nav_faq">FAQ</a>
         </nav>
 
-        <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language">
-            EN / CZ
+        <button class="lang-toggle" type="button" data-lang-toggle aria-label="Přepnout jazyk">
+            CZ / EN
         </button>
     </header>
 
     <main class="page-shell">
-        <section id="poster" class="poster-hero" aria-label="Campaign poster">
-            <div class="poster-hero-head">
-                <p class="eyebrow" data-i18n="poster_label">Campaign poster</p>
-                <span class="poster-edition" data-poster-edition>EN</span>
-            </div>
-            <img class="poster-hero-image" data-poster-image src="../poster/poster_en.jpg" alt="Campaign poster, English version">
-        </section>
-
         <section id="fyp" class="screen hero-panel">
             <div class="hero-copy">
                 <p class="eyebrow" data-i18n="hero_eyebrow">Participant project</p>
-                <h1 data-i18n="hero_title">We made our own Gen Z campaign space</h1>
-                <p class="hero-lead" data-i18n="hero_lead">A dark, high-contrast showcase for our skills, videos, and team story. Use the For You feed to present clips and scroll through our project.</p>
-                <p class="hero-support" data-i18n="hero_support">We built this page to feel like a real campaign product, not a banking brochure.</p>
+                <h1 data-i18n="hero_title">Kampaň, kterou doscrolluješ</h1>
+                <p class="hero-lead" data-i18n="hero_lead">Chceme ukázat Raiffeisenbank a investování ve formátu, který je pro naši generaci přirozený.</p>
+                <p class="hero-support" data-i18n="hero_support">Vertikální feed, tři videa, jeden plakát.</p>
+                <p class="hero-support" data-i18n="hero_support_2">Kampaň o rychlosti nemůže vypadat jako prezentace na třicet slidů.</p>
+                <p class="hero-link" data-i18n="hero_video_link">Zde je odkaz na videa: <a href="https://drive.google.com/drive/folders/16_bUZxL-lYcpmbXheQ-ifJzAqJT4kXAi?usp=sharing" target="_blank" rel="noopener noreferrer">Google Drive složka</a>.</p>
+                <p class="hero-note" data-i18n="hero_note">Videa jsou dostupná v angličtině i češtině.</p>
                 <div class="hero-actions">
                     <a class="cta primary" href="#fyp" data-i18n="hero_cta_primary">Watch the feed</a>
                     <a class="cta secondary" href="#faq" data-i18n="hero_cta_secondary">See FAQ</a>
                 </div>
                 <ul class="hero-facts">
-                    <li data-i18n="hero_fact_1">Built for short-form video storytelling</li>
-                    <li data-i18n="hero_fact_2">Designed for mobile-first scrolling</li>
-                    <li data-i18n="hero_fact_3">English by default, Czech on demand</li>
+                    <li data-i18n="hero_fact_1">Krátký formát, jako všechno, co sledujeme</li>
+                    <li data-i18n="hero_fact_2">Postaveno pro palec, ne pro myš</li>
+                    <li data-i18n="hero_fact_3">Čeština, angličtina na přepnutí</li>
                 </ul>
             </div>
 
@@ -73,18 +68,25 @@
                     <article class="reel-card is-active" data-reel>
                         <div class="reel-media reel-one">
                             <span class="reel-chip">01</span>
-                            <div class="reel-placeholder">Video loop placeholder</div>
-                        </div>
-                        <div class="reel-content">
-                            <div>
-                                <p class="reel-meta">@raifka</p>
-                                <h2 data-i18n="reel_1_title">A strong hook, a clean frame, and a clear message</h2>
-                                <p data-i18n="reel_1_text">This slot is ready for your first campaign clip, teaser, or intro video.</p>
-                            </div>
-                            <div class="reel-stats">
-                                <span>12.4K</span>
-                                <span>842</span>
-                                <span>91</span>
+                            <video class="reel-video" data-reel-video muted autoplay playsinline preload="metadata"></video>
+                            <button class="video-sound-toggle" type="button" data-video-sound-toggle aria-label="Toggle sound" aria-pressed="false">
+                                <svg class="sound-icon sound-icon-muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9H5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 9l4 6M20 9l-4 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                                <svg class="sound-icon sound-icon-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9H5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 8c1.3 1.1 2 2.5 2 4s-.7 2.9-2 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M18.5 5.5c2.1 1.8 3.2 4 3.2 6.5s-1.1 4.7-3.2 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="video-pause-indicator" data-video-pause-indicator aria-hidden="true">⏸</span>
+                            <div class="reel-reactions" aria-label="Reactions">
+                                <button type="button" class="reaction-icon" aria-label="Like">
+                                    <svg class="reaction-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.2l-1.4-1.3C5.4 13.6 2 10.6 2 7.1 2 4.4 4.2 2.2 6.9 2.2c1.5 0 3 .7 4 1.9 1-1.2 2.5-1.9 4-1.9 2.7 0 4.9 2.2 4.9 4.9 0 3.5-3.4 6.5-8.6 11.8L12 20.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                                    <span class="reaction-count">12.4K</span>
+                                </button>
+                                <button type="button" class="reaction-icon" aria-label="Comment">
+                                    <svg class="reaction-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 5.5h15v9h-5.5L10 19v-4.5H4.5v-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                                    <span class="reaction-count">842</span>
+                                </button>
+                                <button type="button" class="reaction-icon" aria-label="Share">
+                                    <svg class="reaction-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 5l-8.5 8.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M19 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <span class="reaction-count">91</span>
+                                </button>
                             </div>
                         </div>
                     </article>
@@ -92,17 +94,25 @@
                     <article class="reel-card" data-reel>
                         <div class="reel-media reel-two">
                             <span class="reel-chip">02</span>
-                            <div class="reel-placeholder">Video loop placeholder</div>
-                        </div>
-                        <div class="reel-content">
-                            <div>
-                                <p class="reel-meta">@raifka</p>
-                                <h2 data-i18n="reel_2_title">Fast edits, sharp typography, and a social-native vibe</h2>
-                                <p data-i18n="reel_2_text">Use this reel for a behind-the-scenes shot or a quick product reveal.</p>
-                            </div>
-                            <div class="reel-actions-inline">
-                                <button type="button" class="action-pill">♥ <span data-i18n="like">Like</span></button>
-                                <button type="button" class="action-pill">↗ <span data-i18n="share">Share</span></button>
+                            <video class="reel-video" data-reel-video muted autoplay playsinline preload="metadata"></video>
+                            <button class="video-sound-toggle" type="button" data-video-sound-toggle aria-label="Toggle sound" aria-pressed="false">
+                                <svg class="sound-icon sound-icon-muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9H5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 9l4 6M20 9l-4 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                                <svg class="sound-icon sound-icon-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9H5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 8c1.3 1.1 2 2.5 2 4s-.7 2.9-2 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M18.5 5.5c2.1 1.8 3.2 4 3.2 6.5s-1.1 4.7-3.2 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="video-pause-indicator" data-video-pause-indicator aria-hidden="true">⏸</span>
+                            <div class="reel-reactions" aria-label="Reactions">
+                                <button type="button" class="reaction-icon" aria-label="Like">
+                                    <svg class="reaction-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.2l-1.4-1.3C5.4 13.6 2 10.6 2 7.1 2 4.4 4.2 2.2 6.9 2.2c1.5 0 3 .7 4 1.9 1-1.2 2.5-1.9 4-1.9 2.7 0 4.9 2.2 4.9 4.9 0 3.5-3.4 6.5-8.6 11.8L12 20.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                                    <span class="reaction-count">24.8K</span>
+                                </button>
+                                <button type="button" class="reaction-icon" aria-label="Comment">
+                                    <svg class="reaction-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 5.5h15v9h-5.5L10 19v-4.5H4.5v-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                                    <span class="reaction-count">1.1K</span>
+                                </button>
+                                <button type="button" class="reaction-icon" aria-label="Share">
+                                    <svg class="reaction-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 5l-8.5 8.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M19 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <span class="reaction-count">139</span>
+                                </button>
                             </div>
                         </div>
                     </article>
@@ -110,73 +120,25 @@
                     <article class="reel-card" data-reel>
                         <div class="reel-media reel-three">
                             <span class="reel-chip">03</span>
-                            <div class="reel-placeholder">Video loop placeholder</div>
-                        </div>
-                        <div class="reel-content">
-                            <div>
-                                <p class="reel-meta">@raifka</p>
-                                <h2 data-i18n="reel_3_title">Clean motion, bold contrast, and a memorable punchline</h2>
-                                <p data-i18n="reel_3_text">Perfect for a smart punchy message that feels more like TikTok than banking.</p>
-                            </div>
-                            <div class="reel-stats">
-                                <span>24.8K</span>
-                                <span>1.1K</span>
-                                <span>139</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="reel-card" data-reel>
-                        <div class="reel-media reel-four">
-                            <span class="reel-chip">04</span>
-                            <div class="reel-placeholder">Video loop placeholder</div>
-                        </div>
-                        <div class="reel-content">
-                            <div>
-                                <p class="reel-meta">@raifka</p>
-                                <h2 data-i18n="reel_4_title">A polished clip space for our team’s strongest skills</h2>
-                                <p data-i18n="reel_4_text">Swap in your finished video later and keep the same layout intact.</p>
-                            </div>
-                            <div class="reel-actions-inline">
-                                <button type="button" class="action-pill">♥ <span data-i18n="like">Like</span></button>
-                                <button type="button" class="action-pill">💬 <span data-i18n="comment">Comment</span></button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="reel-card" data-reel>
-                        <div class="reel-media reel-five">
-                            <span class="reel-chip">05</span>
-                            <div class="reel-placeholder">Video loop placeholder</div>
-                        </div>
-                        <div class="reel-content">
-                            <div>
-                                <p class="reel-meta">@raifka</p>
-                                <h2 data-i18n="reel_5_title">Designed to loop, scroll, and keep people watching</h2>
-                                <p data-i18n="reel_5_text">The feed is made for short attention spans and strong visual rhythm.</p>
-                            </div>
-                            <div class="reel-stats">
-                                <span>19.3K</span>
-                                <span>895</span>
-                                <span>107</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="reel-card" data-reel>
-                        <div class="reel-media reel-six">
-                            <span class="reel-chip">06</span>
-                            <div class="reel-placeholder">Video loop placeholder</div>
-                        </div>
-                        <div class="reel-content">
-                            <div>
-                                <p class="reel-meta">@raifka</p>
-                                <h2 data-i18n="reel_6_title">Your strongest clip goes here at the end of the loop</h2>
-                                <p data-i18n="reel_6_text">When it finishes, the feed wraps around so the experience never feels stuck.</p>
-                            </div>
-                            <div class="reel-actions-inline">
-                                <button type="button" class="action-pill">♥ <span data-i18n="like">Like</span></button>
-                                <button type="button" class="action-pill">↗ <span data-i18n="share">Share</span></button>
+                            <video class="reel-video" data-reel-video muted autoplay playsinline preload="metadata"></video>
+                            <button class="video-sound-toggle" type="button" data-video-sound-toggle aria-label="Toggle sound" aria-pressed="false">
+                                <svg class="sound-icon sound-icon-muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9H5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 9l4 6M20 9l-4 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                                <svg class="sound-icon sound-icon-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9H5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 8c1.3 1.1 2 2.5 2 4s-.7 2.9-2 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M18.5 5.5c2.1 1.8 3.2 4 3.2 6.5s-1.1 4.7-3.2 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="video-pause-indicator" data-video-pause-indicator aria-hidden="true">⏸</span>
+                            <div class="reel-reactions" aria-label="Reactions">
+                                <button type="button" class="reaction-icon" aria-label="Like">
+                                    <svg class="reaction-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.2l-1.4-1.3C5.4 13.6 2 10.6 2 7.1 2 4.4 4.2 2.2 6.9 2.2c1.5 0 3 .7 4 1.9 1-1.2 2.5-1.9 4-1.9 2.7 0 4.9 2.2 4.9 4.9 0 3.5-3.4 6.5-8.6 11.8L12 20.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                                    <span class="reaction-count">19.3K</span>
+                                </button>
+                                <button type="button" class="reaction-icon" aria-label="Comment">
+                                    <svg class="reaction-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 5.5h15v9h-5.5L10 19v-4.5H4.5v-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                                    <span class="reaction-count">895</span>
+                                </button>
+                                <button type="button" class="reaction-icon" aria-label="Share">
+                                    <svg class="reaction-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 5l-8.5 8.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M19 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <span class="reaction-count">107</span>
+                                </button>
                             </div>
                         </div>
                     </article>
@@ -184,54 +146,63 @@
             </div>
         </section>
 
-        <section id="motivation" class="screen content-section section-split section-alt">
-            <div class="section-heading">
-                <p class="eyebrow" data-i18n="motivation_eyebrow">Our motivation</p>
-                <h2 data-i18n="motivation_title">Why we built it this way</h2>
+        <section id="poster" class="poster-hero" aria-label="Campaign poster">
+            <div class="poster-hero-head">
+                <p class="eyebrow" data-i18n="poster_label">Campaign poster</p>
+                <span class="poster-edition" data-poster-edition>EN</span>
             </div>
-            <div class="info-card narrative-card">
-                <p data-i18n="motivation_text_1">We wanted to show Raiffeisenbank in a format that feels native to our generation: fast, visual, direct, and easy to scroll through.</p>
-                <p data-i18n="motivation_text_2">Instead of a corporate banking look, we focused on a dark, energetic style with neon yellow accents, strong typography, and a feed that can hold our videos, skills, and story.</p>
-                <p data-i18n="motivation_text_3">The goal is simple: make the project feel ambitious, modern, and believable as a participant pitch.</p>
-                <p data-i18n="motivation_text_4">Every screen is intentionally short and dense so judges can understand the idea fast and still remember the brand feeling after the scroll.</p>
-            </div>
+            <img class="poster-hero-image" data-poster-image src="../poster/poster_en.jpg" alt="Campaign poster, English version">
         </section>
 
         <section id="about" class="screen content-section about-section">
             <div class="section-heading">
                 <p class="eyebrow" data-i18n="about_eyebrow">About us</p>
-                <h2 data-i18n="about_title">We are the participant team behind this concept</h2>
+                <h2 data-i18n="about_title">Jsme tým účastníků, který tento koncept vytvořil</h2>
                 <p class="section-copy" data-i18n="about_copy">We combine design, development, and presentation so the project looks polished from the first screen to the last.</p>
                 <p class="section-copy" data-i18n="about_copy_2">Each person brings a different strength, which helps us build something that feels complete instead of one-dimensional.</p>
             </div>
             <div class="grid-cards team-grid">
                 <article class="info-card team-card">
                     <div class="profile-photo">
-                        <img src="../profile_photos/holy.jpg" alt="Matěj Holý">
-                    </div>
-                    <h3>Matěj Holý</h3>
-                    <p class="team-meta" data-i18n="team_meta_1">20 let • Softwarové inženýrství a technologie FEL</p>
-                    <p data-i18n="team_role_1">Developer and UI builder</p>
-                    <span class="team-note" data-i18n="team_note_1">Turns ideas into code and interactive layout.</span>
-                </article>
-                <article class="info-card team-card">
-                    <div class="profile-photo">
                         <img src="../profile_photos/sach.jpg" alt="Matěj Šach">
                     </div>
                     <h3>Matěj Šach</h3>
-                    <p class="team-meta" data-i18n="team_meta_2">20 let • Sociologie Studia Současných společnosti FSV</p>
-                    <p data-i18n="team_role_2">Creative lead and content direction</p>
-                    <span class="team-note" data-i18n="team_note_2">Shapes the tone, visuals, and content flow.</span>
+                    <p class="team-meta" data-i18n="team_meta_2">20 let • Sociologie a sociální politika, FSV UK / Inovativní podnikání (Tiimi Akatemia), PEF ČZU</p>
+                    <p data-i18n="team_role_2">Kreativní vedení a biznisový vhled</p>
+                    <span class="team-note" data-i18n="team_note_2">Navrhuje přístupy a koordinuje jejich provedení.</span>
+                </article>
+                <article class="info-card team-card">
+                    <div class="profile-photo">
+                        <img src="../profile_photos/holy.jpg" alt="Matěj Holý">
+                    </div>
+                    <h3>Matěj Holý</h3>
+                    <p class="team-meta" data-i18n="team_meta_1">20 let • Softwarové inženýrství a technologie, FEL ČVUT</p>
+                    <p data-i18n="team_role_1">Technický vhled a exekuce</p>
+                    <span class="team-note" data-i18n="team_note_1">Přináší znalost algoritmů, technické provedení řešení a jeho distribuci online.</span>
                 </article>
                 <article class="info-card team-card">
                     <div class="profile-photo">
                         <img src="../profile_photos/bojan.jpg" alt="Bojan Ignjatović">
                     </div>
                     <h3>Bojan Ignjatović</h3>
-                    <p class="team-meta" data-i18n="team_meta_3">20 let • Sociologie Studia Současných společnosti FSV</p>
-                    <p data-i18n="team_role_3">Strategy, outreach, and presentation</p>
-                    <span class="team-note" data-i18n="team_note_3">Keeps the message clear and focused for the jury.</span>
+                    <p class="team-meta" data-i18n="team_meta_3">20 let • Sociologie a studia současných společnosti FSV UK / Česko-německá studia, FSV UK</p>
+                    <p data-i18n="team_role_3">Strategie komunikace a prezentace</p>
+                    <span class="team-note" data-i18n="team_note_3">Drží tón sdělení jasný, uchopitelný a osobitý.</span>
                 </article>
+            </div>
+        </section>
+
+        <section id="motivation" class="screen content-section section-split section-alt">
+            <div class="section-heading">
+                <p class="eyebrow" data-i18n="motivation_eyebrow">Naše motivace</p>
+                <h2 data-i18n="motivation_title">Naše motivace</h2>
+            </div>
+            <div class="info-card narrative-card">
+                <p data-i18n="motivation_text_1">Tým jsme sestavili tak, abychom pokryli celý proces od pochopení cílové skupiny až po doručení řešení. Zadání je o zoomerech, tak máme v týmu dva sociology.</p>
+                <p data-i18n="motivation_text_2"><strong>Matěj Šach</strong> k sociologii studuje podnikání podle finského konceptu Tiimiakatemia, čímž drží byznysovou stránku a organizaci práce.</p>
+                <p data-i18n="motivation_text_3"><strong>Bojan Ignjatović</strong> má na starost komunikační strategii a to, díky čemuž je výsledné sdělení jasné, úderné a pro zoomery srozumitelné.</p>
+                <p data-i18n="motivation_text_4"><strong>Matěj Holý</strong> zajišťuje technickou realizaci. Jeho znalost algoritmů přišla vhod při psaní kódu i výběru komunikační strategie.</p>
+                <p data-i18n="motivation_text_5">Tři obory, jeden tým. Kombinace sociologického vhledu, byznysového uchopení a technické exekuce nám umožňuje jít od insightu k reálné kampani bez outsourcingu čehokoliv.</p>
             </div>
         </section>
 

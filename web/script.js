@@ -7,6 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = Array.from(document.querySelectorAll('[data-section-link]'));
     const posterImage = document.querySelector('[data-poster-image]');
     const posterEdition = document.querySelector('[data-poster-edition]');
+    const reelVideos = Array.from(document.querySelectorAll('[data-reel-video]'));
+    const sharedSoundButtons = Array.from(document.querySelectorAll('[data-video-sound-toggle]'));
+    const reelPauseIndicators = Array.from(document.querySelectorAll('[data-video-pause-indicator]'));
+
+    const reelVideoSources = {
+        en: ['../videos/en_1.mp4', '../videos/en_2.mp4', '../videos/en_3.mp4'],
+        cs: ['../videos/cz_1.mp4', '../videos/cz_2.mp4', '../videos/cz_3.mp4']
+    };
 
     const translations = {
         en: {
@@ -16,14 +24,17 @@ document.addEventListener('DOMContentLoaded', () => {
             nav_motivation: 'Our Motivation',
             nav_faq: 'FAQ',
             hero_eyebrow: 'Participant project',
-            hero_title: 'We made our own Gen Z campaign space',
-            hero_lead: 'A dark, high-contrast showcase for our skills, videos, and team story. Use the For You feed to present clips and scroll through our project.',
-            hero_support: 'We built this page to feel like a real campaign product, not a banking brochure.',
+            hero_title: 'A campaign you will scroll through',
+            hero_lead: 'We want to show Raiffeisenbank and investing in a format that comes naturally to our generation.',
+            hero_support: 'A vertical feed, three videos, one poster.',
+            hero_support_2: 'A campaign about speed cannot look like a thirty-slide presentation.',
+            hero_video_link: 'Here is the link to the videos: <a href="https://drive.google.com/drive/folders/16_bUZxL-lYcpmbXheQ-ifJzAqJT4kXAi?usp=sharing" target="_blank" rel="noopener noreferrer">Google Drive folder</a>.',
+            hero_note: 'Videos are available in both English and Czech.',
             hero_cta_primary: 'Watch the feed',
             hero_cta_secondary: 'See FAQ',
-            hero_fact_1: 'Built for short-form video storytelling',
-            hero_fact_2: 'Designed for mobile-first scrolling',
-            hero_fact_3: 'English by default, Czech on demand',
+            hero_fact_1: 'Short-form, like everything else we watch',
+            hero_fact_2: 'Built for your thumb, not a mouse',
+            hero_fact_3: 'Czech first, English one tap away',
             poster_label: 'Campaign poster',
             poster_alt: 'Campaign poster, English version',
             fyp_label: 'For You',
@@ -43,35 +54,38 @@ document.addEventListener('DOMContentLoaded', () => {
             share: 'Share',
             comment: 'Comment',
             about_eyebrow: 'About us',
-            about_title: 'We are the participant team behind this concept',
-            team_role_1: 'Developer and UI builder',
-            team_role_2: 'Creative lead and content direction',
-            team_role_3: 'Strategy, outreach, and presentation',
+            about_title: 'We are the team who created this concept',
+            team_role_1: 'Technical insight and execution',
+            team_role_2: 'Creative direction and business insight',
+            team_role_3: 'Communication and presentation strategy',
             motivation_eyebrow: 'Our motivation',
-            motivation_title: 'Why we built it this way',
-            motivation_text_1: 'We wanted to show Raiffeisenbank in a format that feels native to our generation: fast, visual, direct, and easy to scroll through.',
-            motivation_text_2: 'Instead of a corporate banking look, we focused on a dark, energetic style with neon yellow accents, strong typography, and a feed that can hold our videos, skills, and story.',
-            motivation_text_3: 'The goal is simple: make the project feel ambitious, modern, and believable as a participant pitch.',
-            motivation_text_4: 'Every screen is intentionally short and dense so judges can understand the idea fast and still remember the brand feeling after the scroll.',
-            about_copy: 'We combine design, development, and presentation so the project looks polished from the first screen to the last.',
-            about_copy_2: 'Each person brings a different strength, which helps us build something that feels complete instead of one-dimensional.',
-            team_note_1: 'Turns ideas into code and interactive layout.',
-            team_note_2: 'Shapes the tone, visuals, and content flow.',
-            team_note_3: 'Keeps the message clear and focused for the jury.',
-            team_meta_1: '20 years old • Software Engineering and Technology, FEL',
-            team_meta_2: '20 years old • Sociology, Contemporary Society Studies, FSV',
-            team_meta_3: '20 years old • Sociology, Contemporary Society Studies, FSV',
+            motivation_title: 'Our motivation',
+            motivation_text_1: 'We built the team to cover the whole process, from understanding the target group to delivering the solution. The brief is about Gen Z, so we have two sociologists on the team.',
+            motivation_text_2: '<strong>Matěj Šach</strong> studies entrepreneurship alongside sociology through the Finnish Tiimiakatemia concept, which keeps the business side and work organisation under control.',
+            motivation_text_3: '<strong>Bojan Ignjatović</strong> is responsible for the communication strategy and for making sure the final message is clear, sharp, and easy for Gen Z to understand.',
+            motivation_text_4: '<strong>Matěj Holý</strong> handles the technical implementation. His knowledge of algorithms proved useful both when writing the code and when choosing the communication strategy.',
+            motivation_text_5: 'Three fields, one team. The combination of sociological insight, business framing, and technical execution lets us move from insight to a real campaign without outsourcing any of it.',
+            about_copy: 'We combine design, development, and presentation so the project feels polished from the first screen to the last.',
+            about_copy_2: 'Each of us brings a different strength, which makes the whole feel complete rather than one-dimensional.',
+            team_note_1: 'Brings algorithm knowledge, technical delivery, and online distribution of the solution.',
+            team_note_2: 'Shapes approaches and coordinates their delivery.',
+            team_note_3: 'Keeps the tone of the message clear, accessible, and distinctive.',
+            team_meta_1: '20 years old • Software Engineering and Technology, CTU FEL',
+            team_meta_2: '20 years old • Sociology and Social Policy, FSV UK / Innovative Entrepreneurship (Tiimi Akatemia), PEF CZU',
+            team_meta_3: '20 years old • Sociology and Contemporary Society Studies, FSV UK / Czech-German Studies, FSV UK',
             faq_eyebrow: 'FAQ',
-            faq_title: 'Quick answers about the project',
-            faq_copy: 'A clean replacement that keeps the four-screen structure useful and focused.',
-            faq_q1: 'What is this project?',
-            faq_a1: 'It is our participant presentation for Next Gen Lab, built to show skills, ideas, video content, and a strong Gen Z visual direction.',
-            faq_q2: 'What should viewers notice first?',
-            faq_a2: 'The black and yellow visual system, the reel-style feed, and the fact that the page is designed to feel young, bold, and modern.',
-            faq_q3: 'What can you replace here later?',
-            faq_a3: 'You can turn this screen into process notes, video credits, a mini case study, or a behind-the-scenes section about how you made the site.',
-            faq_q4: 'How is the reel supposed to work?',
-            faq_a4: 'Each reel should fit inside the video area, with its own internal scroll or snap behavior, instead of dragging the whole page around.'
+            faq_title: 'QUICK ANSWERS',
+            faq_copy: 'Short questions, short answers. It is what we are used to.',
+            faq_q1: 'So what are you actually saying?',
+            faq_a1: 'That spending takes three seconds and investing takes half an hour. That is not a question of responsibility, but of one decision.',
+            faq_q2: 'How fast should investing be?',
+            faq_a2: 'Faster than you can scroll this page. Two hundred crowns, two taps, done.',
+            faq_q3: 'What if I change my mind?',
+            faq_a3: 'You sell. Getting out takes as long as getting in — a few taps. Investing does not have to mean signing up for ten years (though as a strategy, it can).',
+            faq_q4: 'What about Gen Alpha? They are twelve.',
+            faq_a4: 'We do not need anything from them today. We want them to grow up with investing as part of normal life — like paying by card or ordering food in an app.',
+            faq_q5: 'Why did we do this?',
+            faq_a5: 'Because we are three people who do not want to wait until after school for our first real experience. We want to see how far we can get in two days this September.'
         },
         cs: {
             nav_poster: 'Plakát',
@@ -80,14 +94,17 @@ document.addEventListener('DOMContentLoaded', () => {
             nav_motivation: 'Naše motivace',
             nav_faq: 'FAQ',
             hero_eyebrow: 'Projekt účastníků',
-            hero_title: 'Vytvořili jsme vlastní Gen Z prostor pro kampaň',
-            hero_lead: 'Tmavá, kontrastní prezentace našich dovedností, videí a příběhu týmu. Sekce Pro vás slouží pro ukázky videí a plynulé procházení projektu.',
-            hero_support: 'Chtěli jsme, aby stránka působila jako skutečný kampanový produkt, ne jako bankovní brožura.',
+            hero_title: 'Kampaň, kterou doscrolluješ',
+            hero_lead: 'Chceme ukázat Raiffeisenbank a investování ve formátu, který je pro naši generaci přirozený.',
+            hero_support: 'Vertikální feed, tři videa, jeden plakát.',
+            hero_support_2: 'Kampaň o rychlosti nemůže vypadat jako prezentace na třicet slidů.',
+            hero_video_link: 'Zde je odkaz na videa: <a href="https://drive.google.com/drive/folders/16_bUZxL-lYcpmbXheQ-ifJzAqJT4kXAi?usp=sharing" target="_blank" rel="noopener noreferrer">Google Drive složka</a>.',
+            hero_note: 'Videa jsou dostupná v angličtině i češtině.',
             hero_cta_primary: 'Přehrát feed',
             hero_cta_secondary: 'Zobrazit FAQ',
-            hero_fact_1: 'Vytvořeno pro krátká videa',
-            hero_fact_2: 'Navrženo pro mobile-first scrollování',
-            hero_fact_3: 'Výchozí jazyk angličtina, čeština na přepnutí',
+            hero_fact_1: 'Krátký formát, jako všechno, co sledujeme',
+            hero_fact_2: 'Postaveno pro palec, ne pro myš',
+            hero_fact_3: 'Čeština, angličtina na přepnutí',
             poster_label: 'Kampanový plakát',
             poster_alt: 'Kampanový plakát, česká verze',
             fyp_label: 'Pro vás',
@@ -108,40 +125,99 @@ document.addEventListener('DOMContentLoaded', () => {
             comment: 'Komentovat',
             about_eyebrow: 'O nás',
             about_title: 'Jsme tým účastníků, který tento koncept vytvořil',
-            team_role_1: 'Vývojář a tvůrce UI',
-            team_role_2: 'Kreativní vedení a obsahová směrnice',
-            team_role_3: 'Strategie, komunikace a prezentace',
+            team_role_1: 'Technický vhled a exekuce',
+            team_role_2: 'Kreativní vedení a biznisový vhled',
+            team_role_3: 'Strategie komunikace a prezentace',
             motivation_eyebrow: 'Naše motivace',
-            motivation_title: 'Proč jsme to postavili takto',
-            motivation_text_1: 'Chtěli jsme ukázat Raiffeisenbank ve formátu, který je pro naši generaci přirozený: rychlý, vizuální, přímý a snadno projížděný.',
-            motivation_text_2: 'Místo korporátní bankovní estetiky jsme zvolili tmavý, energický styl s neonově žlutými akcenty, silnou typografií a feedem pro naše videa, dovednosti i příběh.',
-            motivation_text_3: 'Cíl je jednoduchý: aby projekt působil ambiciózně, moderně a uvěřitelně jako účastnický pitch.',
-            motivation_text_4: 'Každá obrazovka je záměrně krátká a hustá, aby porotci pochopili nápad rychle a zároveň si po scrollu zapamatovali pocit značky.',
+            motivation_title: 'Naše motivace',
+            motivation_text_1: 'Tým jsme sestavili tak, abychom pokryli celý proces od pochopení cílové skupiny až po doručení řešení. Zadání je o zoomerech, tak máme v týmu dva sociology.',
+            motivation_text_2: '<strong>Matěj Šach</strong> k sociologii studuje podnikání podle finského konceptu Tiimiakatemia, čímž drží byznysovou stránku a organizaci práce.',
+            motivation_text_3: '<strong>Bojan Ignjatović</strong> má na starost komunikační strategii a to, díky čemuž je výsledné sdělení jasné, úderné a pro zoomery srozumitelné.',
+            motivation_text_4: '<strong>Matěj Holý</strong> zajišťuje technickou realizaci. Jeho znalost algoritmů přišla vhod při psaní kódu i výběru komunikační strategie.',
+            motivation_text_5: 'Tři obory, jeden tým. Kombinace sociologického vhledu, byznysového uchopení a technické exekuce nám umožňuje jít od insightu k reálné kampani bez outsourcingu čehokoliv.',
             about_copy: 'Kombinujeme design, vývoj a prezentaci, aby projekt působil uhlazeně od první obrazovky až po poslední.',
             about_copy_2: 'Každý z nás přináší jinou silnou stránku, díky které působí celek kompletně a ne jednorozměrně.',
-            team_note_1: 'Mění nápady v kód a interaktivní rozhraní.',
-            team_note_2: 'Utváří tón, vizuály a tok obsahu.',
-            team_note_3: 'Drží sdělení jasné a zaměřené na porotu.',
-            team_meta_1: '20 let • Softwarové inženýrství a technologie FEL',
-            team_meta_2: '20 let • Sociologie Studia Současných společnosti FSV',
-            team_meta_3: '20 let • Sociologie Studia Současných společnosti FSV',
+            team_note_1: 'Přináší znalost algoritmů, technické provedení řešení a jeho distribuci online.',
+            team_note_2: 'Navrhuje přístupy a koordinuje jejich provedení.',
+            team_note_3: 'Drží tón sdělení jasný, uchopitelný a osobitý.',
+            team_meta_1: '20 let • Softwarové inženýrství a technologie, FEL ČVUT',
+            team_meta_2: '20 let • Sociologie a sociální politika, FSV UK / Inovativní podnikání (Tiimi Akatemia), PEF ČZU',
+            team_meta_3: '20 let • Sociologie a studia současných společnosti FSV UK / Česko-německá studia, FSV UK',
             faq_eyebrow: 'FAQ',
-            faq_title: 'Rychlé odpovědi o projektu',
-            faq_copy: 'Čistá náhrada, která udržuje čtyřobrazovkovou strukturu užitečnou a soustředěnou.',
-            faq_q1: 'Co je to za projekt?',
-            faq_a1: 'Je to naše účastnická prezentace pro Next Gen Lab, postavená na dovednostech, nápadech, videích a výrazném Gen Z vizuálu.',
-            faq_q2: 'Čeho si má divák všimnout jako prvního?',
-            faq_a2: 'Černožlutého vizuálu, reelového feedu a toho, že stránka působí mladě, výrazně a moderně.',
-            faq_q3: 'Co sem lze později dát místo toho?',
-            faq_a3: 'Můžete z toho udělat proces, video credits, mini case study nebo behind-the-scenes sekci o tvorbě webu.',
-            faq_q4: 'Jak má fungovat reel?',
-            faq_a4: 'Každý reel má být uvnitř video oblasti a má se posouvat jen v ní, ne tahat celý web.'
+            faq_title: 'RYCHLÉ ODPOVĚDI',
+            faq_copy: 'Krátké otázky, krátké odpovědi. Na to jsme jako zoomeři zvyklí.',
+            faq_q1: 'Co tím vlastně chcete říct?',
+            faq_a1: 'Že utratit trvá tři vteřiny a investovat půl hodiny. To není otázka zodpovědnosti, ale jednoho rozhodnutí.',
+            faq_q2: 'Jak rychlé má investování být?',
+            faq_a2: 'Rychlejší než doscrolluješ tuhle stránku. Dvě stovky, dva tapy, hotovo.',
+            faq_q3: 'A když si to rozmyslím?',
+            faq_a3: 'Tak to prodáš. Vystoupit trvá stejně dlouho jako nastoupit, pár tapů. Investovat nemusí znamenat upsat se na deset let (z investiční strategie ale může).',
+            faq_q4: 'A Gen Alpha? Těm je dvanáct.',
+            faq_a4: 'Dnes od nich nic nechceme. Chceme, aby vyrostli s tím, že investování patří k normálnímu životu — stejně jako platit kartou nebo objednávat jídlo v appce.',
+            faq_q5: 'Proč jsme do toho šli?',
+            faq_a5: 'Protože jsme tři lidi, které nebaví čekat na první „reálnou zkušenost“ až po škole. Chceme zjistit, kam až to dotáhneme za dva dny v září.'
         }
     };
 
-    let currentLang = 'en';
+    let currentLang = 'cs';
     let activeIndex = 0;
-    let loopTimer = null;
+    let soundEnabled = false;
+
+    const safePlay = (video, muted = true) => {
+        video.muted = muted;
+        video.playsInline = true;
+        const playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === 'function') {
+            playPromise.catch(() => {});
+        }
+    };
+
+    const syncReelVideos = () => {
+        reelVideos.forEach((video, index) => {
+            if (index === activeIndex) {
+                if (video.src) {
+                    safePlay(video, !soundEnabled);
+                }
+            } else {
+                video.pause();
+                video.currentTime = 0;
+            }
+        });
+    };
+
+    const syncVideoChrome = () => {
+        sharedSoundButtons.forEach((button) => {
+            button.setAttribute('aria-label', soundEnabled ? 'Mute all videos' : 'Unmute all videos');
+            button.setAttribute('aria-pressed', String(soundEnabled));
+            button.classList.toggle('is-muted', !soundEnabled);
+        });
+
+        reelVideos.forEach((video, index) => {
+            const pauseIndicator = reelPauseIndicators[index];
+            const isActive = index === activeIndex;
+            const isPaused = video.paused;
+
+            if (pauseIndicator) {
+                pauseIndicator.hidden = !isPaused || !isActive;
+            }
+
+            video.closest('.reel-media')?.classList.toggle('is-paused', isPaused && isActive);
+            video.closest('.reel-media')?.classList.toggle('is-muted', !soundEnabled && isActive);
+        });
+    };
+
+    const applySoundState = (enabled) => {
+        soundEnabled = enabled;
+
+        reelVideos.forEach((video) => {
+            video.muted = !soundEnabled;
+            if (video === reelVideos[activeIndex] && !video.paused) {
+                safePlay(video, !soundEnabled);
+            }
+        });
+
+        syncVideoChrome();
+    };
 
     const updateActiveReel = (index) => {
         activeIndex = (index + reels.length) % reels.length;
@@ -163,6 +239,8 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior
         });
         updateActiveReel(nextIndex);
+        syncReelVideos();
+        syncVideoChrome();
     };
 
     const getClosestReelIndex = () => {
@@ -200,6 +278,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return bestId;
     };
 
+    const htmlTranslationKeys = new Set(['hero_video_link', 'motivation_text_2', 'motivation_text_3', 'motivation_text_4']);
+
     const applyLanguage = (lang) => {
         const dictionary = translations[lang];
         document.documentElement.lang = lang;
@@ -207,7 +287,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-i18n]').forEach((node) => {
             const key = node.getAttribute('data-i18n');
             if (dictionary[key]) {
-                node.textContent = dictionary[key];
+                if (htmlTranslationKeys.has(key)) {
+                    node.innerHTML = dictionary[key];
+                } else {
+                    node.textContent = dictionary[key];
+                }
             }
         });
 
@@ -227,39 +311,53 @@ document.addEventListener('DOMContentLoaded', () => {
             posterEdition.textContent = lang === 'en' ? 'EN' : 'CZ';
         }
 
+        reelVideos.forEach((video, index) => {
+            const source = reelVideoSources[lang][index];
+            if (video.getAttribute('src') !== source) {
+                video.pause();
+                video.src = source;
+                video.load();
+            }
+            video.muted = !soundEnabled;
+            video.loop = false;
+        });
+
+        syncReelVideos();
+        syncVideoChrome();
+
         langToggle.setAttribute('aria-pressed', String(lang === 'cs'));
         langToggle.textContent = lang === 'en' ? 'EN / CZ' : 'CZ / EN';
     };
 
-    const startLoop = () => {
-        stopLoop();
-        loopTimer = window.setInterval(() => {
-            scrollToReel(activeIndex + 1);
-        }, 6500);
+    const advanceToNextReel = () => {
+        scrollToReel(activeIndex + 1);
     };
 
-    const stopLoop = () => {
-        if (loopTimer) {
-            window.clearInterval(loopTimer);
-            loopTimer = null;
+    const pauseVideoOnClick = (event) => {
+        event.stopPropagation();
+        const video = event.currentTarget;
+        if (video.paused) {
+            safePlay(video, !soundEnabled);
+        } else {
+            video.pause();
         }
+        syncVideoChrome();
     };
 
-    const restartLoop = () => {
-        startLoop();
+    const toggleSharedSound = (event) => {
+        event.stopPropagation();
+        applySoundState(!soundEnabled);
     };
 
     scrollUpButtons.forEach((button) => {
         button.addEventListener('click', () => {
             scrollToReel(activeIndex - 1);
-            restartLoop();
         });
     });
 
     scrollDownButtons.forEach((button) => {
         button.addEventListener('click', () => {
             scrollToReel(activeIndex + 1);
-            restartLoop();
         });
     });
 
@@ -271,7 +369,6 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
         const direction = event.deltaY > 0 ? 1 : -1;
         scrollToReel(activeIndex + direction);
-        restartLoop();
     }, { passive: false });
 
     feed.addEventListener('touchstart', (event) => {
@@ -285,7 +382,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (Math.abs(delta) > 40) {
             scrollToReel(activeIndex + (delta > 0 ? 1 : -1));
-            restartLoop();
         }
     }, { passive: true });
 
@@ -300,6 +396,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const index = reels.indexOf(entry.target);
                 if (index !== -1) {
                     updateActiveReel(index);
+                    syncReelVideos();
+                    syncVideoChrome();
                 }
             }
         });
@@ -328,8 +426,21 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(reel);
         reel.addEventListener('click', () => {
             updateActiveReel(index);
-            restartLoop();
+            syncReelVideos();
         });
+    });
+
+    reelVideos.forEach((video) => {
+        video.addEventListener('click', pauseVideoOnClick);
+        video.addEventListener('ended', () => {
+            if (reels.indexOf(video.closest('[data-reel]')) === activeIndex) {
+                advanceToNextReel();
+            }
+        });
+    });
+
+    sharedSoundButtons.forEach((button) => {
+        button.addEventListener('click', toggleSharedSound);
     });
 
     document.querySelectorAll('.site-nav a, .cta').forEach((link) => {
@@ -337,13 +448,16 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 updateActiveReel(getClosestReelIndex());
                 updateActiveNav(getVisibleSectionId());
+                syncReelVideos();
             }, 50);
         });
     });
 
     applyLanguage(currentLang);
+    applySoundState(false);
     feed.scrollTop = 0;
     updateActiveReel(getClosestReelIndex());
+    syncReelVideos();
+    syncVideoChrome();
     updateActiveNav(getVisibleSectionId());
-    startLoop();
 });
