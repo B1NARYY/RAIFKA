@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             faq_q3: 'What if I change my mind?',
             faq_a3: 'You sell. Getting out takes as long as getting in — a few taps. Investing does not have to mean signing up for ten years (though as a strategy, it can).',
             faq_q4: 'What about Gen Alpha? They are twelve.',
-            faq_a4: 'We do not need anything from them today. We want them to grow up with investing as part of normal life — like paying by card or ordering food in an app.',
+            faq_a4: 'We do not need anything from them today. We want them to grow up with investing as part of normal life like paying by card or ordering food in an app.',
             faq_q5: 'Why did we do this?',
             faq_a5: 'Because we are three people who do not want to wait until after school for our first real experience. We want to see how far we can get in two days this September.'
         },
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
             faq_q3: 'A když si to rozmyslím?',
             faq_a3: 'Tak to prodáš. Vystoupit trvá stejně dlouho jako nastoupit, pár tapů. Investovat nemusí znamenat upsat se na deset let (z investiční strategie ale může).',
             faq_q4: 'A Gen Alpha? Těm je dvanáct.',
-            faq_a4: 'Dnes od nich nic nechceme. Chceme, aby vyrostli s tím, že investování patří k normálnímu životu — stejně jako platit kartou nebo objednávat jídlo v appce.',
+            faq_a4: 'Dnes od nich nic nechceme. Chceme, aby vyrostli s tím, že investování patří k normálnímu, stejně jako platit kartou nebo objednávat jídlo v appce.',
             faq_q5: 'Proč jsme do toho šli?',
             faq_a5: 'Protože jsme tři lidi, které nebaví čekat na první „reálnou zkušenost“ až po škole. Chceme zjistit, kam až to dotáhneme za dva dny v září.'
         }
