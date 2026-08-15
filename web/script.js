@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const translations = {
         en: {
+            brand_team: 'IT takes three',
             nav_poster: 'Poster',
             nav_fyp: 'For You',
             nav_about: 'About Us',
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hero_title: 'A campaign you will scroll through',
             hero_lead: 'We want to show Raiffeisenbank and investing in a format that comes naturally to our generation.',
             hero_support: 'A vertical feed, three videos, one poster.',
-            hero_support_2: 'A campaign about speed cannot look like a thirty-slide presentation.',
+            hero_support_2: 'A Gen Z campaign cannot look like a thirty-slide presentation.',
             hero_video_link: 'Here is the link to the videos: <a href="https://drive.google.com/drive/folders/16_bUZxL-lYcpmbXheQ-ifJzAqJT4kXAi?usp=sharing" target="_blank" rel="noopener noreferrer">Google Drive folder</a>.',
             hero_note: 'Videos are available in both English and Czech.',
             hero_cta_primary: 'Watch the feed',
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             share: 'Share',
             comment: 'Comment',
             about_eyebrow: 'About us',
-            about_title: 'We are the team who created this concept',
+            about_title: 'IT takes three, we are the team that created this concept',
             team_role_1: 'Technical insight and execution',
             team_role_2: 'Creative direction and business insight',
             team_role_3: 'Communication and presentation strategy',
@@ -88,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             faq_a5: 'Because we are three people who do not want to wait until after school for our first real experience. We want to see how far we can get in two days this September.'
         },
         cs: {
+            brand_team: 'IT takes three',
             nav_poster: 'Plakát',
             nav_fyp: 'Pro vás',
             nav_about: 'O nás',
@@ -97,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hero_title: 'Kampaň, kterou doscrolluješ',
             hero_lead: 'Chceme ukázat Raiffeisenbank a investování ve formátu, který je pro naši generaci přirozený.',
             hero_support: 'Vertikální feed, tři videa, jeden plakát.',
-            hero_support_2: 'Kampaň o rychlosti nemůže vypadat jako prezentace na třicet slidů.',
+            hero_support_2: 'Gen Z kampaň nemůže vypadat jako prezentace na třicet slidů.',
             hero_video_link: 'Zde je odkaz na videa: <a href="https://drive.google.com/drive/folders/16_bUZxL-lYcpmbXheQ-ifJzAqJT4kXAi?usp=sharing" target="_blank" rel="noopener noreferrer">Google Drive složka</a>.',
             hero_note: 'Videa jsou dostupná v angličtině i češtině.',
             hero_cta_primary: 'Přehrát feed',
@@ -124,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
             share: 'Sdílet',
             comment: 'Komentovat',
             about_eyebrow: 'O nás',
-            about_title: 'Jsme tým účastníků, který tento koncept vytvořil',
+            about_title: 'IT takes three, jsme tým, který tento koncept vytvořil',
             team_role_1: 'Technický vhled a exekuce',
             team_role_2: 'Kreativní vedení a biznisový vhled',
             team_role_3: 'Strategie komunikace a prezentace',

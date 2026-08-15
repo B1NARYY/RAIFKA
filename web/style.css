@@ -110,6 +110,15 @@ a {
     letter-spacing: -0.03em;
 }
 
+.brand-team {
+    margin-top: 0.15rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
 .site-nav {
     display: flex;
     align-items: center;
